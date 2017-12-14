@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Combinatorics</title>
+        <link rel="stylesheet" type="text/css" href="math.css">
+        <script>
+            function factorial(num)
+            {
+                if ( num == 0 )
+                { return 1 ; }
+                else
+                {
+                    return num * factorial( num - 1 ) ;
+                }
+            }
+
+            function PerWith( n, k )
+            {
+                return Math.pow( n, k ) ;
+            }
+
+            function PerWithout( n, k )
+            {
+                return factorial( n ) / factorial( n-k ) ;
+            }
+
+            function combination( n, k )
+            {
+                return factorial( n ) / ( factorial ( n - k ) * factorial ( k ) ) ;
+            }
+
+            function show()
+            {
+                var x = document.getElementById( "show_radio" ) ;
+                if ( document.getElementById( "permutation").checked)
+                {
+                    x.style.display = "block" ;
+                }
+                else
+                {
+                    x.style.display = "none" ;
+                }                  
+            }
+            
+            function calculate ()
+            {
+                var n = Number( document.getElementById( "n" ).value ) ;
+                var k = Number( document.getElementById( "k" ).value ) ;
+                var result = "";
+
+                if (document.getElementById( "permutation" ).checked == true && document.getElementById( "Replace" ).checked == true )
+                {
+                    result = PerWith ( n, k ) ;
+                }
+                else if ((document.getElementById( "permutation" ).checked == true && document.getElementById( "Without_Replace" ).checked == true ) )        
+                {
+                    result = PerWithout ( n, k )
+                }     
+                else
+                {
+                    result = combination( n, k ) ;        
+                }
+                document.getElementById ( "result" ).value = result ;
+            }  
+        </script>
+    </header>
+    <body>
+        <div class="layout">
+            <div class="top_area">
+            <h1 id="header"><a href="math machine.html" style="text-decoration:none; color:#51cf66">MATH MACHINE</a></h1>
+            <p><i> Check your results in computing mathematics with this machine</i></p>
+            </div>
+            <div class="navigation"><a href="number_conversions.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM CONVERSIONS</b></a></div>
+            <div class="navigation"><a href="number_output.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM OUTPUT</b></a></div>
+            <div class="navigation"><a href="combinatorics.html" style="text-decoration:none; color:blue;"><b>COMBINATORICS</b></a></div>
+            <div class="navigation"><a href="truth_tables.html" style="text-decoration:none; color:blue;"><b>TRUTH TABLES</b></a></div>
+            <div class="navigation"><a href="random_values.html" style="text-decoration:none; color:blue;"><b>RANDOM VALUES</b></a></div>
+            <div class="head">
+                <h3 style="color:#51cf66">COMBINATORICS</h3>
+                <p>In here, the machine gives you result for your calculation of combination and permutation<br>
+                   Select either combination or permutation and start executing your problem</p>
+                <br>
+                <p><b>Input your number</b></p>
+            </div>
+            <div class="combinatorics_middle">
+                <div class="input_label">
+                    Total elements n:
+                </div>
+                <div>
+                    <input type="text" name="n" id="n">
+                </div>
+            </div>
+            <p></p>
+            <div class="combinatorics_middle">
+                <div class="input_label">
+                    Number of factors k:
+                </div>
+                <div>
+                    <input type="text" name="k" id="k">
+                </div>
+                <div class="foo"></div>
+            </div>
+            <br>
+            <div>
+                <b>Choose type of calculation</b>
+            </div>
+            <br>
+            <div class="combinatorics_middle">
+                <div class="input_label">
+                    COMBINATION<input onClick="show()" type="radio" name="h" value="comnination" id="combination">
+                </div>
+                <div>
+                    PERMUTATION<input onclick="show()" type="radio" name="h" value="permutation" id="permutation">
+                </div>
+            </div>
+            <br>
+            <div class="radio_button" id="show_radio">
+                <input type="radio" name="j" id="Replace"> Sampling with replacement
+                <input type="radio" name="j" id="Without_Replace"> Sampling without replacement
+            </div>
+            <br>
+            <br>
+            <div>
+                <input onClick="calculate()" type="button" value="EXECUTE">
+            </div>
+            <br>
+            <div class="combinatorics_middle">
+                <div class="input_label">
+                    <br>
+                    <b>YOUR RESULT IS </b>
+                </div>
+                <div>
+                    <br>
+                    <input class="result" id="result" type="number" disabled style="width:100px; text-align:center">
+                </div>
+            </div>
+        </div>  
+        <footer class="foot">
+            <p class="footer_margin">Copyright&#169; by Thao Tran<br>
+                Email address: t7trle00@students.oamk.fi
+            </p>
+        </footer>      
+    </body>
+</html>

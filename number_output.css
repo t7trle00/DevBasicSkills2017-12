@@ -1,0 +1,102 @@
+html
+{
+    height: 100% ;
+}
+body
+{
+    background-color: grey ;
+    color: black ;  
+    height: 100% ;
+    display: flex ;
+    flex-direction: column ;
+}
+.layout
+{
+    font-family: helvetica ;
+    size: 20px ;
+    color: black;
+    text-align: center ;
+    margin-left: auto ;
+    margin-right: auto ;
+    background-color: white ;
+    width: 1000px ;
+    flex: 1 0 auto ;
+    /*display: block ;*/
+}
+#header
+{
+    font-family: Arial ;
+    size: 30px ;
+    color: #51cf66 ;
+}
+.top_area
+{
+    border-bottom: 1px green solid;
+}
+.navigation
+{
+    width: 20% ;
+    float: left ;
+    background-color: white ;
+    height: 50px ;
+    padding-top: 10px ;
+    border-bottom: 2px green solid ;
+    color: blue ;
+}
+
+.navigation:hover
+{
+    background-color: #51cf66 ;
+}
+.head
+{
+    margin-top: 100px ;
+    
+}
+table
+{
+    border-bottom: 1px #e9ecef solid ;
+}
+td
+{
+    width: 150px ;
+    height: 25px ;
+    text-align: center ;
+    border-right: 1px #e9ecef solid ;
+}
+td:first-of-type
+{
+    border-left: 1px #e9ecef solid ;
+}
+tr
+{
+    background-color: #e9ecef ;
+}
+tr:first-child
+{
+    background-color: #b2f2bb ;
+    font-weight: bold ;
+}
+tbody tr:nth-child(even)
+{
+    background-color: white ;
+}
+.index
+{
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+}
+.foot
+{
+    background-color:#51cf66 ;
+    width: 1000px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align:center ;
+    display: block ;
+}
+.footer_margin
+{
+    margin-top: 0px ;
+    margin-bottom: 0px ;
+}

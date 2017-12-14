@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Truth table</title>
+        <link rel="stylesheet" type="text/css" href="truth_table.css">
+        <script>
+            function clear_table()
+            {
+                while ( document.getElementById( "truthtable" ).rows.length > 0 )
+                {
+                    document.getElementById( "truthtable" ).deleteRow(0) ;
+                }
+            }
+            function truthtable()
+            {
+                clear_table() ;
+                var table = document.getElementById( "truthtable" ) ;
+                var row = table.insertRow(0) ;
+                var cell = row.insertCell(0) ;
+                cell.innerHTML = "T" ;
+                cell = row.insertCell(1) ;
+                cell.innerHTML = "F" ;
+                if ( document.getElementById( "AND" ).selected == true )
+                {
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML = "T AND F" ;
+                    row = table.insertRow(1) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="T" ;
+
+                    row = table.insertRow(2) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="F" ;
+
+                    row = table.insertRow(3) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="F" ;
+
+                    row = table.insertRow(4) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="F" ;
+
+                }
+                else if ( document.getElementById( "OR" ).selected == true )
+                {
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML = " T OR F" ;
+
+                    row = table.insertRow(1) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="T" ;
+
+                    row = table.insertRow(2) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="T" ;
+
+                    row = table.insertRow(3) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="T" ;
+
+                    row = table.insertRow(4) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="F" ;
+                }
+                else
+                {
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML = " T XOR F" ;
+
+                    row = table.insertRow(1) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="F" ;
+
+                    row = table.insertRow(2) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="T" ;
+
+                    row = table.insertRow(3) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "T" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="T" ;
+
+                    row = table.insertRow(4) ;
+                    cell = row.insertCell(0) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(1) ;
+                    cell.innerHTML = "F" ;
+                    cell = row.insertCell(2) ;
+                    cell.innerHTML ="F" ;
+                }
+
+                
+            }
+            function truth()
+            {
+            
+                var first = document.getElementById( "first_value" ).value.toUpperCase() ;
+                var second = document.getElementById( "second_value" ).value.toUpperCase() ;
+                var result ;
+                if ( document.getElementById( "AND" ).selected == true )
+                {
+                    if ( first == "F" && second == "T")
+                    {
+                        result = "F" ;
+                    }
+                    else if ( first == "T" && second == "T" )
+                    {
+                        result = "T" ;
+                    }
+                    else if ( first == "T" && second == "F" )
+                    {
+                        result = "F" ;
+                    }
+                    else if ( first == "F" && second == "F" )
+                    {
+                        result = "F" ;
+                    }
+                }
+                else if ( document.getElementById( "OR" ).selected == true )
+                {
+                    if ( first == "F" && second == "T" )
+                    {
+                        result = "T" ;
+                    }
+                    else if ( first == "T" && second == "T" )
+                    {
+                        result = "T" ;
+                    }
+                    else if ( first == "T" && second == "F" )
+                    {
+                        result = "T" ;
+                    }
+                    else if ( first == "F" && second == "F" )
+                    {
+                        result = "F" ;
+                    }
+                }
+                else if ( document.getElementById( "XOR" ).selected == true )
+                {
+                    if ( first == "F" && second == "T")
+                    {
+                        result = "T" ;
+                    }
+                    else if ( first == "T" && second == "T" )
+                    {
+                        result = "F" ;
+                    }
+                    else if ( first == "T" && second == "F" )
+                    {
+                        result = "T" ;
+                    }
+                    else if ( first == "F" && second == "F" )
+                    {
+                        result = "F" ;
+                    }
+                }
+                document.getElementById( "result" ).value = result ;
+            }   
+            
+            
+        </script>
+    </header>
+    <body>
+        <div class="layout">
+            <div class="top_area">
+            <h1 id="header"><a href="math machine.html" style="text-decoration:none; color:#51cf66">MATH MACHINE</a></h1>
+            <p><i> Check your results in computing mathematics with this machine</i></p>
+            </div>
+            <div class="navigation"><a href="number_conversions.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM CONVERSIONS</b></a></div>
+            <div class="navigation"><a href="number_output.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM OUTPUT</b></a></div>
+            <div class="navigation"><a href="combinatorics.html" style="text-decoration:none; color:blue;"><b>COMBINATORICS</b></a></div>
+            <div class="navigation"><a href="truth_tables.html" style="text-decoration:none; color:blue;"><b>TRUTH TABLES</b></a></div>
+            <div class="navigation"><a href="random_values.html" style="text-decoration:none; color:blue;"><b>RANDOM VALUES</b></a></div>
+            <div class="head">
+                <h3 style="color:#51cf66">TRUTH TABLES</h3>
+                <p>In here, the machine gives you result about basic truth logic. It's about AND, OR, XOR operation.<br>
+                   You type in either <b>T</b> or <b>F</b> in first and second value input and choose operation to see the output.</p>
+                <br>
+            </div>
+            <div>
+                <table align="center" class="index">
+                    <tr>
+                        <td><b>First value</b></td>
+                        <td></td>
+                        <td><b>Second value</b></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="first_value" style="width:50px"/>
+                        </td>
+                        <td>
+                            <select>
+                                <option id="AND">AND</option>
+                                <option id="OR">OR</option>
+                                <option id="XOR">XOR</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" id="second_value" style="width:50px"/>
+                        </td>
+                    </tr>
+                    <tr style="height:50px">
+                        <td colspan="3">
+                            <input type="button" onClick="truth(); truthtable()" value="CHECK" />
+                        </td>
+                    </tr>
+                    <tr style="height:100px">
+                        <td><b>Logical result</b></td>
+                        <td><input type="text" id="result" disabled style="width:50px; text-align:center; font-weight:bold; font-size:20px"/></td>
+                    </tr>
+                    <tr >
+                        <td colspan="3">TRUTH TABLE</td>
+                    </tr>
+                </table>
+                <table id="truthtable" align="center" class="truthtable"></table>
+            </div>
+        </div>
+        <footer class="foot">
+            <p class="footer_margin">Copyright&#169; by Thao Tran<br>
+                Email address: t7trle00@students.oamk.fi
+            </p>
+        </footer>
+    </body>
+</html>

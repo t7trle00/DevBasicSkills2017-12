@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Random values</title>
+        <link rel="stylesheet" type="text/css" href="random_values.css">
+        <script>
+            function randomrange( min, max )
+            {
+                return Math.floor( Math.random() * ( max - min + 1 ) + min ) ;
+            }
+            var value1 = 0, value2 = 0, value3 = 0 , value4 = 0, value5 = 0, value6 = 0, value7 = 0, value8 = 0, value9 = 0, value10 = 0 ;
+            
+            function random_test()
+            {
+                var random_number = randomrange( 1, 10 ) ;
+                var sum = value1 + value2 + value3 + value4 + value5 + value6 + value7 + value8 +value9 + value10 + 1 ;
+                var distribution = sum * 0.1 ;
+                var distribution_round = distribution.toFixed(2) ;
+                var test = ( Math.pow( value1 - distribution_round, 2 ) + Math.pow( value2 - distribution_round, 2 )
+                        + Math.pow( value3 - distribution_round, 2 ) + Math.pow( value4 - distribution_round, 2 )
+                        + Math.pow( value5 - distribution_round, 2 ) + Math.pow( value6 - distribution_round, 2 )
+                        + Math.pow( value7 - distribution_round, 2 ) + Math.pow( value8 - distribution_round, 2 )
+                        + Math.pow( value9 - distribution_round, 2 ) + Math.pow( value10 - distribution_round, 2 ) ) / distribution_round ;
+                var test_round = test.toFixed(2) ;
+                document.getElementById( "random_result" ).innerHTML = random_number ;
+                document.getElementById( "result" ).innerHTML = test_round ;
+                document.getElementById( "population_result" ).innerHTML = sum ;
+                if ( random_number === 1 )
+                {
+                    value1 ++ ;
+                    document.getElementById( "1" ).innerHTML = value1 ; 
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 2 )
+                {
+                    value2 ++ ;
+                    document.getElementById ( "2" ).innerHTML = value2 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 3 )
+                {
+                    value3 ++ ;
+                    document.getElementById ( "3" ).innerHTML = value3 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 4 )
+                {
+                    value4 ++ ;
+                    document.getElementById( "4" ).innerHTML = value4 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 5 )
+                {
+                    value5 ++ ;
+                    document.getElementById( "5" ).innerHTML = value5 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 6 )
+                {
+                    value6 ++ ;
+                    document.getElementById( "6" ).innerHTML = value6 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 7 )
+                {
+                    value7 ++ ;
+                    document.getElementById( "7" ).innerHTML = value7 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 8 )
+                {
+                    value8 ++ ;
+                    document.getElementById( "8" ).innerHTML = value8 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 9 )
+                {
+                    value9 ++ ;
+                    document.getElementById( "9" ).innerHTML = value9 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                else if ( random_number === 10 )
+                {
+                    value10 ++ ;
+                    document.getElementById( "10" ).innerHTML = value10 ;
+                    document.getElementById( "1_1" ).innerHTML = distribution_round ;
+                }
+                
+            }
+        </script>
+    </header>
+    <body>
+        <div class="layout">
+            <div class="top_area">
+            <h1 id="header"><a href="math machine.html" style="text-decoration:none; color:#51cf66">MATH MACHINE</a></h1>
+            <p><i> Check your results in computing mathematics with this machine</i></p>
+            </div>
+            <div class="navigation"><a href="number_conversions.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM CONVERSIONS</b></a></div>
+            <div class="navigation"><a href="number_output.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM OUTPUT</b></a></div>
+            <div class="navigation"><a href="combinatorics.html" style="text-decoration:none; color:blue;"><b>COMBINATORICS</b></a></div>
+            <div class="navigation"><a href="truth_tables.html" style="text-decoration:none; color:blue;"><b>TRUTH TABLES</b></a></div>
+            <div class="navigation"><a href="random_values.html" style="text-decoration:none; color:blue;"><b>RANDOM VALUES</b></a></div>
+            <div class="head">
+                <h3 style="color:#51cf66">RANDOM VALUES</h3>
+                <p class="text">In here, the machine gives you Chi-squared test for random distribution<br>
+                   The test is based on hypothesis <b><i>H0: Distribution is fair, H1: Distribution is unfair</i></b> <br>
+                   <span style="color:blue; font-weight: bold">H0 is accepted when P_value < 0.01, Chi-squared statistic < Critical value </span><br>
+                   A range number from [1,10] is provided for randomness,<span style="color:blue; font-style:italic"> Critical value under p_value < 0.01 </span> is <b>21.67</b> </p>
+                <br>
+                <p><b>Range number</b></p>
+            </div>
+            <div>
+                <table align="center" class="table_input">
+                    <tr>
+                        <td>Number</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+
+                    </tr>
+                    <tr>
+                        <td>Empirical occurances</td>
+                        <td id="1">0</td>
+                        <td id="2">0</td>
+                        <td id="3">0</td>
+                        <td id="4">0</td>
+                        <td id="5">0</td>
+                        <td id="6">0</td>
+                        <td id="7">0</td>
+                        <td id="8">0</td>
+                        <td id="9">0</td>
+                        <td id="10">0</td>
+                    </tr>
+                    <tr>
+                        <td>Expected occurances</td>
+                        <td id="1_1"colspan="10" style="border-top:1px solid black">0</td>
+                    </tr>
+                </table>
+                
+            </div>   
+            <div class="test_button">
+                <input  class="button" onclick="random_test()" type="button" value="TEST" id="test"/>
+            </div>
+            <div>
+                <table class="table_result" align="center">
+                    <tr>
+                        <td class="td_result">Random number: </td>
+                        <td class="td_result"> <h3 id="random_result"></h3></td>
+                    </tr>
+                    <tr>
+                        <td class="td_result"> Population:</td>
+                        <td class="td_result"><h3 id="population_result"></h3></td>
+                    </tr>
+                    <tr>
+                        <td class="td_result"> Chi-squared statistic for the distribution:</td>
+                        <td class="td_result"><h3 class="output_result" id="result"></h3>
+                    </tr>
+                </table>
+            </div>      
+        </div>
+        <footer class="foot">
+            <p class="footer_margin">Copyright&#169; by Thao Tran<br>
+                Email address: t7trle00@students.oamk.fi
+            </p>
+        </footer>
+    </body>
+</html>
