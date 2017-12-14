@@ -1,0 +1,99 @@
+html
+{
+    height: 100% ;
+}
+body
+{
+    background-color: grey ;
+    color: black ;
+    height: 100% ;
+    flex: column ;
+}
+.layout
+{
+    font-family: helvetica ;
+    size: 20px ;
+    color: black;
+    text-align: center ;
+    margin-left: auto ;
+    margin-right: auto ;
+    background-color: white ;
+    width: 1000px ;
+    padding-bottom: 50px ;
+    flex: 1 0 auto ;
+    
+}
+#header
+{
+    font-family: Arial ;
+    size: 30px ;
+    color: #51cf66 ;
+}
+.top_area
+{
+    border-bottom: 1px green solid;
+}
+.navigation
+{
+    width: 20% ;
+    float: left ;
+    background-color: white ;
+    height: 50px ;
+    padding-top: 10px ;
+    border-bottom: 2px green solid ;
+    color: blue ;
+}
+
+.navigation:hover
+{
+    background-color: #51cf66 ;
+}
+.head
+{
+    margin-top: 100px ;
+    
+}
+.foot
+{
+    background-color:#51cf66 ;
+    width: 1000px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align:center ;
+    display: block ;
+}
+.footer_margin
+{
+    margin-top: 0px ;
+    margin-bottom: 0px ;
+}
+.operation
+{
+    width: 30% ;
+    float: left ;
+}
+.index
+{
+    -webkit-border-horizontal-spacing: 50px;
+    -webkit-border-vertical-spacing: 10px;
+}
+.truthtable
+{
+    border-collapse: collapse ;
+    border: 1px solid black ;
+}
+.truthtable td
+{
+    border: 1px solid black ;
+    width: 100px ;
+    height: 30px ;
+    
+}
+.truthtable tr:first-child 
+{
+    font-weight: bold ;
+}
+.truthtable tr:nth-child(odd)
+{
+    background-color: #ced4da ;
+}
