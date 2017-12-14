@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Numberical system conversions</title>
+        <link rel="stylesheet" type="text/css" href="number_conversions.css">
+        <script>
+            function conversion()
+            {
+                var x = Number ( document.getElementById( "input_number" ).value ) ;
+                var hex_string = document.getElementById( "input_number" ).value.toString().trim();
+                var hex_reverse = hex_string.split('').reverse().join('');
+                var hex_index = 0 ; var hex_dec = 0 ;
+                var y = parseInt ( x, 16 ) ;
+                var oct_dec = parseInt ( x, 8 ) ;
+                var bi_dec = parseInt ( x, 2 ) ;
+                var result = "" ;
+                if ( document.getElementById( "dectobi" ).checked == true )
+                {
+                     result = x.toString( 2 ) ;
+                }
+                else if ( document.getElementById( "dectohex" ).checked == true )
+                {
+                    result = x.toString( 16 ).toUpperCase() ;
+                }
+                else if ( document.getElementById( "dectooct" ).checked == true )
+                {
+                    result = x.toString( 8 ) ;
+                }
+                
+                else if ( document.getElementById( "bitodec" ).checked == true )
+                {   
+                    if ( /^[01]+$/g.test( document.getElementById( "input_number" ).value ) == false )
+                    {
+                        alert( "You need to type a number consisting of 0's and 1's" ) ;
+                    }
+                    else
+                    {
+                        result = bi_dec ;
+                    }                    
+                                   
+                }
+                else if ( document.getElementById( "bitohex" ).checked == true )
+                {
+                    if ( /^[01]+$/g.test( document.getElementById( "input_number" ).value ) == false )
+                    {
+                        alert( "You need to type a number consisting of 0's and 1's" ) ;
+                    }
+                    else
+                    {
+                        result = bi_dec.toString ( 16 ).toUpperCase() ;
+                    }      
+                    
+                }
+                else if ( document.getElementById( "bitooct" ).checked == true ) 
+                {
+                    if ( /^[01]+$/g.test( document.getElementById( "input_number" ).value ) == false )
+                    {
+                        alert( "You need to type a number consisting of 0's and 1's" ) ;
+                    }
+                    else
+                    {
+                        result = bi_dec.toString ( 8 ) ;
+                    } 
+                    
+                }
+
+                else if ( document.getElementById( "hextodec" ).checked == true ) 
+                {
+                    do
+                    {
+                        var hex_character_code = 0 ; hex_value = 0 ;
+                        hex_character_code = hex_reverse.charAt(hex_index) ;
+                        hex_value = parseInt ( hex_character_code, 16 ) ;
+                        hex_dec += hex_value * Math.pow ( 16, hex_index ) ;
+                        hex_index ++ ;
+                    }
+                    while ( hex_index < hex_reverse.length ) ;
+                    result = hex_dec ;
+                }
+                else if ( document.getElementById( "hextobi" ).checked == true )
+                {   
+                    do
+                    {
+                        var hex_character_code = 0 ; hex_value = 0 ;
+                        hex_character_code = hex_reverse.charAt(hex_index) ;
+                        hex_value = parseInt ( hex_character_code, 16 ) ;
+                        hex_dec += hex_value * Math.pow ( 16, hex_index ) ;
+                        hex_index ++ ;
+                    }
+                    while ( hex_index < hex_reverse.length ) ;
+                    result = hex_dec.toString( 2 ) ;
+                }
+                else if ( document.getElementById( "hextooct" ).checked == true )
+                {   
+                    do
+                    {
+                        var hex_character_code = 0 ; hex_value = 0 ;
+                        hex_character_code = hex_reverse.charAt(hex_index) ;
+                        hex_value = parseInt ( hex_character_code, 16 ) ;
+                        hex_dec += hex_value * Math.pow ( 16, hex_index ) ;
+                        hex_index ++ ;
+                    }
+                    while ( hex_index < hex_reverse.length ) ;
+                    result = hex_dec.toString( 8 ) ;
+                }
+                
+                else if ( document.getElementById( "octtodec" ).checked == true )
+                {
+                    result = oct_dec.toString( 10 ) ;
+                }
+                else if ( document.getElementById( "octtobi" ).checked == true )
+                {
+                    result = oct_dec.toString( 2 ) ;
+                }
+                else
+                {
+                    result = oct_dec.toString( 16 ).toUpperCase() ;
+                }
+
+                document.getElementById( "output_number" ).value = result ;
+
+            }
+           
+        </script>
+    </header>
+    <body>
+        <div class="layout">
+            <div class="top_area">
+            <h1 id="header"><a href="math machine.html" style="text-decoration:none; color:#51cf66">MATH MACHINE</a></h1>
+            <p><i> Check your results in computing mathematics with this machine</i></p>
+            </div>
+            <div class="navigation"><a href="number_conversions.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM CONVERSIONS</b></a></div>
+            <div class="navigation"><a href="number_output.html" style="text-decoration:none; color:blue;"><b>NUMBER SYSTEM OUTPUT</b></a></div>
+            <div class="navigation"><a href="combinatorics.html" style="text-decoration:none; color:blue;"><b>COMBINATORICS</b></a></div>
+            <div class="navigation"><a href="truth_tables.html" style="text-decoration:none; color:blue;"><b>TRUTH TABLES</b></a></div>
+            <div class="navigation"><a href="random_values.html" style="text-decoration:none; color:blue;"><b>RANDOM VALUES</b></a></div>
+            <div class="head">
+                <h3 style="color:#51cf66">NUMERICAL SYSTEM CONVERSIONS</h3>
+                <p> In this section, you can convert a number to different numberical systems
+                </p>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="list">
+                                <p><input type="radio" onClick="conversion()" id= "dectobi" name="y">Decimal to Binary</p>
+                                <p><input type="radio" onClick="conversion()" id="dectohex" name="y">Decimal to Hexa</p>
+                                <p><input type="radio" onClick="conversion()" id="dectooct" name="y">Decimal to Octal</a></p>
+                                <p><input type="radio" onClick="conversion()" id="bitodec" name="y">Binary to Decimal</p>
+                                <p><input type="radio" onClick="conversion()" id="bitohex" name="y">Binary to Hexa</p>
+                                <p><input type="radio" onClick="conversion()" id="bitooct" name="y">Binary to Octal</p>
+                                <p><input type="radio" onClick="conversion()" id="hextodec" name="y">Hexa to Decimal</p>
+                                <p><input type="radio" onClick="conversion()" id="hextobi" name="y">Hexa to Binary</p>
+                                <p><input type="radio" onClick="conversion()" id="hextooct" name="y">Hexa to Octal</p>
+                                <p><input type="radio" onClick="conversion()" id="octtodec" name="y">Octal to Decimal</p>
+                                <p><input type="radio" onClick="conversion()" id="octtobi" name="y">Octal to Binary</p>
+                                <p><input type="radio" onClick="conversion()" id="octtohex" name="y">Octal to Hexa</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text_position">
+                                <div>
+                                    <p class="title_input"><b>Input a number</b></p>
+                                </div>
+                                <div>
+                                    <input class="text" type="text" id="input_number" name="i">
+                                </div>
+                                <input onClick="conversion()" type="button" value="Convert" name="">
+                                <div>
+                                    <p class="title_input"><b>Output number</b></p>
+                                </div>
+                                <div>
+                                    <input class="text" type="text" id="output_number" name="o" disabled>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <footer class="foot">
+            <p class="footer_margin">Copyright&#169; by Thao Tran<br>
+                Email address: t7trle00@students.oamk.fi
+            </p>
+        </footer>
+    </body>
+</html>
