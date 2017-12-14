@@ -1,0 +1,96 @@
+html
+{
+    height: 100% ;
+}
+body
+{
+    background-color: grey ;
+    color: black ;
+    height: 100% ;
+    flex: column ;
+}
+.layout
+{
+    font-family: helvetica ;
+    size: 20px ;
+    color: black;
+    text-align: center ;
+    margin-left: auto ;
+    margin-right: auto ;
+    background-color: white ;
+    width: 1000px ;
+    padding-bottom: 50px ;
+    flex: 1 0 auto ;
+    
+}
+#header
+{
+    font-family: Arial ;
+    size: 30px ;
+    color: #51cf66 ;
+}
+.top_area
+{
+    border-bottom: 1px green solid;
+}
+.navigation
+{
+    width: 20% ;
+    float: left ;
+    background-color: white ;
+    height: 50px ;
+    padding-top: 10px ;
+    border-bottom: 2px green solid ;
+    color: blue ;
+}
+
+.navigation:hover
+{
+    background-color: #51cf66 ;
+}
+.head
+{
+    margin-top: 100px ;
+    
+}
+.foot
+{
+    background-color: #51cf66 ;
+    width: 1000px ; 
+    margin: auto ;
+}
+.footer_margin
+{
+    text-align: center ;
+    margin-top: 0px ;
+    margin-bottom: 0px ;
+}
+.list
+{
+    border: 2px outset #51cf66 ;
+    margin-left: 25px ;
+    padding-left: 20px ;
+    padding-right: 20px ;
+    text-align: left ;
+    background-color: #d3f9d8 ;
+    font-size: 18px ;
+}
+.text_position
+{
+    margin-left: 120px ;
+}
+.text
+{
+    width: 300px ;
+    height: 150px ;
+    border: 1px solid black ;
+    margin-bottom: 30px ;
+    font-size: 25px ;
+    text-align: center ;
+}
+.title_input
+{
+    margin-top: 40px ;
+    margin-bottom: 10px ;
+    text-align: left ;
+}
